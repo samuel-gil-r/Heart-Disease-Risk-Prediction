@@ -1,168 +1,191 @@
-# Heart Disease Risk Prediction
+Heart Disease Risk Prediction
 
-Este proyecto tiene como objetivo analizar y comprender el riesgo de enfermedad cardíaca a partir de datos clínicos reales, utilizando un enfoque paso a paso y completamente explicativo. El énfasis principal no está en usar librerías automáticas, sino en **entender el proceso**, los datos y las decisiones que se toman durante el análisis.
+This project aims to analyze and understand heart disease risk using real clinical data, following a step-by-step and fully explanatory approach. The main emphasis is not on using automated libraries, but on understanding the process, the data, and the decisions made throughout the analysis.
 
-El trabajo se desarrolla como parte de un laboratorio académico enfocado en **regresión logística**, análisis exploratorio de datos y evaluación del desempeño de modelos predictivos.
+The work is developed as part of an academic laboratory focused on logistic regression, exploratory data analysis (EDA), and evaluation of predictive model performance.
 
-## Objetivo del proyecto
+Project Objective
 
-El objetivo principal es:
+The main objectives of this project are:
 
-- Analizar un conjunto de datos reales de pacientes
-- Identificar patrones asociados a la presencia de enfermedad cardíaca
-- Construir un modelo de regresión logística desde cero
-- Interpretar los resultados obtenidos de forma clara y razonada
+Analyze a real-world patient dataset
 
-## Dataset utilizado
-Se utiliza el **Heart Disease Dataset**, un conjunto de datos ampliamente conocido que contiene información clínica de pacientes, como:
-- Edad
-- Presión arterial
-- Colesterol
-- Frecuencia cardíaca máxima
-- Variables relacionadas con ejercicio y electrocardiogramas
-- Variable objetivo que indica presencia o ausencia de enfermedad cardíaca
+Identify patterns associated with the presence of heart disease
 
-El dataset se encuentra almacenado en la carpeta:
+Build a logistic regression model from scratch
 
-## Desarrollo del análisis
+Clearly and thoughtfully interpret the obtained results
 
-Todo el desarrollo del proyecto se encuentra documentado y ejecutado en un cuaderno de Jupyter.
+Dataset Used
 
-### NOTA IMPORTANTE
+The project uses the Heart Disease Dataset, a well-known dataset that contains clinical information from patients, including:
 
-**El cuaderno de Jupyter donde se encuentra todo el desarrollo es el que se llama _Feature Selection_.**  
-En este cuaderno se abordan de manera ordenada los siguientes puntos clave:
+Age
 
-- Análisis Exploratorio de Datos 
-- Completitud de datos y verificación de valores faltantes
-- Preparación y transformación de variables
-- Convergencia del algoritmo de regresión logística
-- Evaluación del desempeño del modelo
-- Interpretación de resultados
-- Interpretación de coeficientes del modelo
+Blood pressure
 
-## Contenido del análisis
+Cholesterol
 
-### 1. Análisis Exploratorio de Datos 
+Maximum heart rate
 
-En esta etapa se realiza una exploración inicial del dataset para:
+Exercise-related and electrocardiographic variables
 
-- Comprender la estructura de los datos
-- Identificar el tipo de variables disponibles
-- Analizar la distribución de la variable objetivo
-- Verificar si el dataset se encuentra balanceado
+A target variable indicating the presence or absence of heart disease
 
-Se incluye una visualización clara de la distribución de pacientes con y sin enfermedad cardíaca.
+The dataset is stored in the following directory:
+
+data/heart.csv
+
+Analysis Development
+
+All project development is fully documented and executed within a Jupyter Notebook.
+
+IMPORTANT NOTE
+
+The Jupyter notebook that contains the complete development is named Feature Selection.
+This notebook systematically addresses the following key aspects:
+
+Exploratory Data Analysis (EDA)
+
+Data completeness and missing value verification
+
+Variable preparation and transformation
+
+Logistic regression algorithm convergence
+
+Model performance evaluation
+
+Interpretation of results
+
+Interpretation of model coefficients
+
+Analysis Content
+1. Exploratory Data Analysis (EDA)
+
+At this stage, an initial exploration of the dataset is performed in order to:
+
+Understand the structure of the data
+
+Identify the available variable types
+
+Analyze the distribution of the target variable
+
+Verify whether the dataset is balanced
+
+A clear visualization of patients with and without heart disease is included.
 
 <img width="711" height="708" alt="image" src="https://github.com/user-attachments/assets/3f083253-8e5c-48bd-8aa3-b4b609ed9c5b" />
 
-- Gráfica de barras con la distribución de clases (0: ausencia, 1: presencia)
+Bar chart showing class distribution (0: absence, 1: presence)
 
-Ubicación recomendada:
+2. Data Completeness
 
----
+The dataset is checked for missing values, confirming that the data is suitable for model training without requiring complex imputation techniques.
 
-### 2. Completitud de los datos
+This step is essential to ensure the reliability of the subsequent analysis.
 
-Se verifica si existen valores faltantes en el dataset y se confirma que los datos son adecuados para el entrenamiento del modelo sin necesidad de imputaciones complejas.
+3. Data Preparation
 
-Este paso es fundamental para asegurar la calidad del análisis posterior.
+In this phase, the following steps are performed:
 
----
+Conversion of the target variable to binary format
 
-### 3. Preparación de los datos
+Selection of relevant features
 
-En esta fase se realiza:
+Splitting the dataset into training and testing sets (70% / 30%)
 
-- Conversión de la variable objetivo a formato binario
-- Selección de variables relevantes
-- Separación del conjunto de datos en entrenamiento y prueba (70% / 30%)
-- Normalización de variables numéricas
+Normalization of numerical variables
 
-Esto permite entrenar el modelo de manera estable y coherente.
+These steps allow the model to be trained in a stable and consistent manner.
 
----
+4. Model Training
 
-### 4. Entrenamiento del modelo
+A logistic regression model is implemented from scratch, following the theoretical concepts covered in class:
 
-Se implementa un modelo de **regresión logística desde cero**, siguiendo los conceptos vistos en clase:
+Sigmoid function
 
-- Función sigmoide
-- Función de costo
-- Algoritmo de gradiente descendente
+Cost function
 
-Durante el entrenamiento se analiza la **convergencia del algoritmo**, observando cómo el costo disminuye a lo largo de las iteraciones.
+Gradient descent algorithm
+
+During training, the convergence of the algorithm is analyzed by observing how the cost decreases across iterations.
 
 <img width="873" height="689" alt="image" src="https://github.com/user-attachments/assets/f2848b6f-74bf-41cb-8e13-e13bc062ed9f" />
 
-- Gráfica del costo en función de las iteraciones
+Cost vs. iterations plot
 
-Ubicación recomendada:
+5. Performance Evaluation
 
+Once trained, the model’s performance is evaluated using the following metrics:
 
-### 5. Evaluación del desempeño
+Accuracy
 
-Una vez entrenado el modelo, se evalúa su desempeño utilizando métricas como:
+Precision
 
-- Exactitud (accuracy)
-- Precisión
-- Recall
-- F1-score
+Recall
 
-Estas métricas se analizan tanto en el conjunto de entrenamiento como en el de prueba para verificar la capacidad de generalización del modelo.
+F1-score
 
----
+These metrics are analyzed on both the training and test sets to assess the model’s generalization capability.
 
-### 6. Interpretación de resultados
+6. Results Interpretation
 
-Se realiza un análisis interpretativo de los resultados obtenidos, explicando:
+An interpretative analysis of the results is conducted, explaining:
 
-- Qué tan bien el modelo logra separar pacientes con y sin enfermedad
-- Qué limitaciones presenta el enfoque lineal
-- Qué tan confiables son las predicciones realizadas
+How well the model separates patients with and without heart disease
 
----
+The limitations of the linear decision boundary
 
-### 7. Interpretación de coeficientes
+The reliability of the predictions produced
 
-Finalmente, se analizan los coeficientes del modelo para entender:
+7. Coefficient Interpretation
 
-- Qué variables tienen mayor influencia en la predicción
-- Cómo cambian las probabilidades de enfermedad ante variaciones en los factores clínicos
-- La relación entre los datos médicos y la salida del modelo
+Finally, the model coefficients are analyzed to understand:
 
-Este punto permite conectar el modelo matemático con el contexto real de la salud.
+Which variables have the strongest influence on predictions
 
-### Visualización de Fronteras de Decisión
+How changes in clinical factors affect disease probability
+
+The relationship between medical data and model output
+
+This step connects the mathematical model with the real-world healthcare context.
+
+Decision Boundary Visualization
 <img width="1173" height="335" alt="image" src="https://github.com/user-attachments/assets/982b8348-1fe0-49fa-9f87-695bc9434014" />
-Para analizar la capacidad del modelo de regresión logística para separar las clases, se entrenaron modelos utilizando pares de variables y se visualizaron sus fronteras de decisión.
-En la figura se muestran tres combinaciones de características:
-Edad vs Colesterol
-Presión arterial vs Frecuencia cardíaca máxima
-Depresión del ST vs Número de vasos observados
-Los puntos representan los datos de entrenamiento y prueba, mientras que la línea indica la frontera de decisión aprendida por el modelo.
 
+To analyze the ability of the logistic regression model to separate classes, models were trained using pairs of features, and their decision boundaries were visualized.
 
-## Evidencia visual del desarrollo
+The figure shows three feature combinations:
 
-Durante el desarrollo del laboratorio se generaron distintas visualizaciones y ejecuciones del cuaderno.
+Age vs. Cholesterol
 
-- Ejecución correcta del notebook
-- Resultados de entrenamiento
-- Gráficas principales del análisis
+Blood Pressure vs. Maximum Heart Rate
 
-## Estado del despliegue en la nube
+ST Depression vs. Number of Observed Vessels
 
-El proyecto contempla una etapa de despliegue en AWS SageMaker.  
-Sin embargo, **esta fase no se ha realizado aún** debido a restricciones de permisos en el entorno actual.
+Data points represent training and test samples, while the line indicates the decision boundary learned by the model.
 
-El trabajo queda preparado para continuar con el despliegue cuando se cuente con acceso completo a los servicios necesarios.
+Visual Evidence of Development
 
-## Conclusión
+Throughout the laboratory development, several visual outputs and notebook executions were generated, including:
 
-Este proyecto permite comprender de manera práctica y progresiva cómo aplicar regresión logística a un problema real de salud, enfatizando la interpretación de los datos, el comportamiento del algoritmo y la explicación de los resultados, más allá de simplemente obtener una predicción.
+Successful notebook execution
 
+Training results
 
-## Autor
+Main analytical plots
+
+Cloud Deployment Status
+
+The project includes a planned deployment stage using AWS SageMaker.
+However, this phase has not yet been completed due to permission restrictions in the current environment.
+
+The project is fully prepared to continue with cloud deployment once full access to the required services is available.
+
+Conclusion
+
+This project provides a practical and progressive understanding of how to apply logistic regression to a real healthcare problem, emphasizing data interpretation, algorithm behavior, and result explanation rather than simply generating predictions.
+
+Author
 
 Samuel Antonio Gil Romero
