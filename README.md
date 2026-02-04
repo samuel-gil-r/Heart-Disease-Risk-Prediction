@@ -33,7 +33,7 @@ Todo el desarrollo del proyecto se encuentra documentado y ejecutado en un cuade
 **El cuaderno de Jupyter donde se encuentra todo el desarrollo es el que se llama _Feature Selection_.**  
 En este cuaderno se abordan de manera ordenada los siguientes puntos clave:
 
-- Análisis Exploratorio de Datos (EDA)
+- Análisis Exploratorio de Datos 
 - Completitud de datos y verificación de valores faltantes
 - Preparación y transformación de variables
 - Convergencia del algoritmo de regresión logística
